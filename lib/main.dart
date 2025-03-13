@@ -53,13 +53,14 @@ class _StoryPageState extends State<StoryPage> {
                   onPressed: () {
                     //Choice 1 made by user.
                     //TODO: Step 18 - Call the nextStory() method from storyBrain and pass the number 1 as the choice made by the user.
+                    storyBrain.nextStory(1);
                   },
                   style: ButtonStyle(
                     backgroundColor: WidgetStatePropertyAll<Color>(Colors.red),
                   ),
                   child: Text(
                     //TODO: Step 13 - Use the storyBrain to get the text for choice 1.
-                    'Choice 1',
+                    storyBrain.getChoice1(),
                     style: TextStyle(
                       fontSize: 20.0,
                     ),
@@ -77,13 +78,14 @@ class _StoryPageState extends State<StoryPage> {
                   onPressed: () {
                     //Choice 2 made by user.
                     //TODO: Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
+                    storyBrain.nextStory(2);
                   },
                   style: ButtonStyle(
                     backgroundColor: WidgetStatePropertyAll<Color>(Colors.blue),
                   ),
                   child: Text(
                     //TODO: Step 14 - Use the storyBrain to get the text for choice 2.
-                    'Choice 2',
+                    storyBrain.getChoice2(),
                     style: TextStyle(
                       fontSize: 20.0,
                     ),
