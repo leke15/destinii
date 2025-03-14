@@ -34,6 +34,10 @@ class Story_brain {
         choice2: '')
   ];
 
+  void storyChange() {
+    _storyNum++;
+  }
+
   String getStory() {
     return _storyData[_storyNum].storyTitle;
   }
@@ -49,16 +53,30 @@ class Story_brain {
   void nextStory(int choiceNumber) {
     if (choiceNumber == 1 && _storyNum == 0) {
       _storyNum = 2;
-  } else if (choiceNumber == 2 && _storyNum == 0) {
-    _storyNum = 1;
+    } else if (choiceNumber == 2 && _storyNum == 0) {
+      _storyNum = 1;
     } else if (choiceNumber == 1 && _storyNum == 1) {
-    _storyNum = 2;
+      _storyNum = 2;
     } else if (choiceNumber == 2 && _storyNum == 1) {
-    _storyNum = 3;
+      _storyNum = 3;
     } else if (choiceNumber == 1 && _storyNum == 2) {
-    _storyNum = 5;
+      _storyNum = 5;
     } else if (choiceNumber == 2 && _storyNum == 2) {
-    _storyNum = 4;
+      _storyNum = 4;
+    } else if (_storyNum == 3 || _storyNum == 4 || _storyNum == 5) {
+      restart();
+    }
+  }
+
+  void restart() {
+    _storyNum = 0;
+  }
+
+  bool buttonShouldBeVisible() {
+    if (_storyNum <= 2) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
